@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="banner" :style="backgroundBanner"></div>
+  <div class="section-all">
+    <LastArticle></LastArticle>
+    <PopularArticle></PopularArticle>
   </div>
 </template>
 
 <script>
+import LastArticle from '../components/LastArticle.vue';
+import PopularArticle from '../components/PopularArticle.vue';
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "Home",
   components: {
-    HelloWorld,
-  },
+    LastArticle,
+    PopularArticle
+},
+  data() {
+      return {
+        backgroundBanner: {
+          backgroundImage: `url(${require('@/assets/headerphoto.jpeg')})`
+        }
+      }
+    }
 };
 </script>
