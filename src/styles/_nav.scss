@@ -36,11 +36,14 @@
         position: relative;
 
         &:hover {
+            color: #fff;
             &::after {
                 width: 100%;
             }
         }
-
+        &:active,&:focus {
+            color: #fff;
+        }
         &::after {
             content: "";
             position: absolute;
